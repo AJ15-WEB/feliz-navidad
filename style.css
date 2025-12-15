@@ -1,0 +1,115 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Fondo */
+body {
+    height: 100vh;
+    background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: white;
+}
+
+/* Tarjeta principal */
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.4);
+    animation: aparecer 1.5s ease;
+}
+
+/* Imagen */
+.tree {
+    width: 160px;
+    margin-bottom: 20px;
+    animation: flotar 3s infinite ease-in-out;
+}
+
+/* Texto */
+h1 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+/* Botón */
+button {
+    background: #e63946;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+}
+
+button:hover {
+    background: #ff4d5a;
+    transform: scale(1.1);
+}
+
+/* Mensaje sorpresa */
+#mensaje {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+/* Animaciones */
+@keyframes flotar {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Nieve animada */
+.snow::before,
+.snow::after {
+    content: "❄ ❄ ❄ ❄ ❄ ❄ ❄ ❄ ❄ ❄";
+    position: absolute;
+    top: -10%;
+    width: 100%;
+    font-size: 2rem;
+    animation: nieve 10s linear infinite;
+    opacity: 0.7;
+}
+
+.snow::after {
+    animation-duration: 15s;
+    opacity: 0.4;
+}
+
+@keyframes nieve {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(120vh); }
+}
